@@ -1,0 +1,9 @@
+services:
+  library.api:
+    image: ${DOCKER_REGISTRY-}libraryapi
+    build:
+      context: .
+      dockerfile: Services/Library/Library.API/Dockerfile
+
+  librarydb:
+    image: mcr.microsoft.com/mssql/server
