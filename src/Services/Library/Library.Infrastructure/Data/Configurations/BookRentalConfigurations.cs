@@ -12,17 +12,18 @@ public class BookRentalConfigurations : IEntityTypeConfiguration<BookRental>
     {
         builder.HasKey(x => x.Id);
 
-        builder.Property(x => x.BookId)
+        builder.Property(x => x.Id)
             .HasConversion(
                 bookId => bookId.Value,
-                dbId => BookId.Of(dbId));
+                dbId => BookRentalId.Of(dbId));
 
+        builder.HasOne<Book>()
+            .WithMany()
+            .HasForeignKey(x => x.BookId);
 
-        builder.HasMany<Book>()
-            .WithMany();
-
-        builder.HasMany<Person>()
-            .WithMany();
+        builder.HasOne<Person>()
+            .WithMany()
+            .HasForeignKey(x => x.PersonId);
 
         builder.Property(x => x.StartDate)
             .IsRequired();

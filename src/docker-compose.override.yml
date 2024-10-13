@@ -15,7 +15,7 @@ services:
     container_name: librarydb
     environment:
       - ACCEPT_EULA=Y
-      - BRENOADMIN_PASSWORD=bre@dmin12345
+      - SA_PASSWORD=Bre@dmin12345
     restart: always
     ports:
       - "1433:1433"
