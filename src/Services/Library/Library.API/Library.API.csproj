@@ -27,9 +27,4 @@
     <ProjectReference Include="..\Library.Infrastructure\Library.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Endpoints\Books\" />
-    <Folder Include="Endpoints\BookRent\" />
-  </ItemGroup>
-
 </Project>
